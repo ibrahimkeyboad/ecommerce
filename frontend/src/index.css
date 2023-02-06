@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: 400;
+}
+
+main {
+  min-height: 80vh;
+
+}
+
+header .navbar-nav a {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+h3 {
+  padding: 1rem 0;
+}
+
+h1 {
+  font-size: 2.24rem;
+  margin-bottom: 1rem;
+}
+
+.user {
+  color: rgb(205, 205, 205);
+  align-self: center;
+  cursor: pointer;
+  /* text-transform: capitalize !important; */
+}
+
+.user:hover {
+  color: #fff;
+}
+
+
+.danger {
+  background-color: rgba(214, 111, 111, 0.22);
+  display: inline-block;
+}
+
+input {
+  margin-bottom: 1rem;
+}
+
+.link {
+  padding: .7rem 2rem;
+  color: rgb(144, 144, 144);
+  display: inline-block;
+  border-radius: .5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.link:active,
+.link.active {
+  color: #000;
+  font-weight: 700;
+}
+
+.link:hover {
+  background-color: rgba(213, 213, 213, 0.155);
+  color: #000;
+}
+
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #000 transparent #555 transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
