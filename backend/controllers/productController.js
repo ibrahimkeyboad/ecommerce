@@ -24,10 +24,10 @@ exports.getProducts = catchAsync(async (req, res, next) => {
     page,
   });
 });
-exports.getProduct = catchAsync(async (req, res, next) => {
-  const product = await Product.findById(req.params.id).populate('reviews');
+exports.getProduct = async (req, res, next) => {
+  const product = await Product.findById(req.params.id )
   res.status(200).json({
     status: 'success',
-    product,
+    product 
   });
-});
+}

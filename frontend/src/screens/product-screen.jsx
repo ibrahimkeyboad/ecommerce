@@ -39,22 +39,17 @@ function ProductScreen() {
     dispatch(getProduct(match.id));
   }, [dispatch, match, reviewSuccess]);
 
-  if (loading) {
+  if (loading && !product) {
     return <Loader />;
   }
 
   if (error) {
     return <span className='alert-danger p-2 mt-2'>{message}</span>;
   }
-  document.title = product.name;
 
   console.log(product);
   function addToCartHandler() {
     navigate(`/cart/${match.id}?quantity=${quantity}`);
-  }
-
-  if (product) {
-    console.log('no data');
   }
 
   function submitHandler(e) {
@@ -73,7 +68,7 @@ function ProductScreen() {
       </Link>
       <Row>
         <Col md={6}>
-          <Image src={`/${product.image}`} alt={product.name} fluid />
+          <Image src={`${product.image}`} alt={product.name} fluid />
         </Col>
         <Col md={3}>
           <ListGroup variant='flush'>

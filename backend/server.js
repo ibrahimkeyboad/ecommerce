@@ -5,8 +5,4 @@ const port = process.env.PORT || 5000;
 
 connectDB();
 
-app.listen(port, () =>
-  console.log(
-    `Server running in ${process.env.NODE_ENV} on port ${port}`.yellow
-  )
-);
+app.listen(port, () => console.log(`Server running on port ${port}`.yellow));
